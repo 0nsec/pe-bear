@@ -244,6 +244,10 @@ set (pebear_windows_srcs
 	gui/windows/MainWindow.cpp
 	gui/windows/AIAssistantWindow.cpp
 	gui/windows/AISettingsWindow.cpp
+	gui/windows/EntropyWindow.cpp
+	gui/windows/IOCWindow.cpp
+	gui/windows/ShellcodeWindow.cpp
+	gui/windows/ReportWindow.cpp
 )
 
 set (pebear_windows_hdrs
@@ -258,6 +262,10 @@ set (pebear_windows_hdrs
 	gui/windows/MainWindow.h
 	gui/windows/AIAssistantWindow.h
 	gui/windows/AISettingsWindow.h
+	gui/windows/EntropyWindow.h
+	gui/windows/IOCWindow.h
+	gui/windows/ShellcodeWindow.h
+	gui/windows/ReportWindow.h
 )
 
 set (pebear_srcs
