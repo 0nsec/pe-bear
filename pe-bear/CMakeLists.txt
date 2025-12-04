@@ -61,6 +61,12 @@ set (pebear_base_srcs
 	base/RegKeyManager.cpp
 	base/AISettings.cpp
 	base/AIAnalyzer.cpp
+	base/YaraScanner.cpp
+	base/EntropyAnalyzer.cpp
+	base/ShellcodeDetector.cpp
+	base/IOCExtractor.cpp
+	base/UnpackerDetector.cpp
+	base/ReportGenerator.cpp
 )
 
 set (pebear_base_hdrs
@@ -77,6 +83,12 @@ set (pebear_base_hdrs
 	base/ImportsAutoadderSettings.h
 	base/AISettings.h
 	base/AIAnalyzer.h
+	base/YaraScanner.h
+	base/EntropyAnalyzer.h
+	base/ShellcodeDetector.h
+	base/IOCExtractor.h
+	base/UnpackerDetector.h
+	base/ReportGenerator.h
 )
 
 set (pebear_gui_base_srcs
