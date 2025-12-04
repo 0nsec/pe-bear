@@ -13,11 +13,11 @@
 
 ## About This Project
 
-This project is **modified by [0nsec](https://github.com/0nsec)** with AI-powered reverse engineering capabilities.
+This project is **modified by [0nsec](https://github.com/0nsec)** with AI-powered reverse engineering capabilities and advanced malware analysis features.
 
 **Original Project:** [PE-bear by hasherezade](https://github.com/hasherezade/pe-bear)  
 
-**⭐ Credits:** This project is based on the excellent PE-bear tool originally created by **[hasherezade](https://github.com/hasherezade)**. All credit for the core PE analysis functionality goes to her and the original contributors.
+**Credits:** This project is based on the excellent PE-bear tool originally created by **[hasherezade](https://github.com/hasherezade)**. All credit for the core PE analysis functionality goes to her and the original contributors.
 
 ---
 
@@ -29,49 +29,67 @@ This project is **modified by [0nsec](https://github.com/0nsec)** with AI-powere
   - Automated malware behavior detection
   - Function explanation and deobfuscation suggestions
   
-- **Google Gemini API Support** (Gemini Pro, Gemini 1.5)
+- **Google Gemini API Support** (Gemini 2.0-flash, Gemini Pro)
   - Alternative AI provider option
   - Context-aware analysis
   
-- **AI Assistant Features:**
+- **AI Agent Mode:**
+  - Fully automated comprehensive PE analysis
   - Import/Export table analysis with threat assessment
   - Suspicious string detection and categorization
   - Malware family identification
-  - Security implication analysis
+  - Security vulnerability analysis
   - Anti-analysis technique detection
 
-### Enhanced Analysis Tools
-- **VirusTotal Integration**
-  - File hash scanning
-  - Detection rate analysis
-  - Malware report retrieval
-  
-- **Advanced Hashing**
-  - MD5, SHA-1, SHA-256, SHA-512
-  - Import hash (ImpHash)
-  - Rich header hash
-  
-- **Improved Analysis**
-  - Entropy visualization
-  - Overlay data detection
-  - Enhanced string extraction with Unicode support
-  - Suspicious API detection
+### Advanced Analysis Tools
 
-### Export Capabilities
-- JSON structured data export
-- XML format export
-- Comprehensive analysis reports
-- AI analysis results export
+- **YARA Scanner**
+  - Custom YARA rule support
+  - Built-in malware detection patterns
+  - Pattern-based threat identification
 
-### Configuration
-- Secure API key management
-- Multi-provider AI support
-- Customizable AI models
-- Persistent settings storage
+- **Entropy Analyzer**
+  - Section-by-section entropy visualization
+  - Packed/encrypted section detection
+  - Visual entropy graph display
+
+- **Shellcode Detector**
+  - Common shellcode pattern detection
+  - NOP sled identification
+  - Syscall and API resolution pattern matching
+
+- **IOC Extractor**
+  - URL extraction
+  - IP address detection
+  - Domain name identification
+  - Registry key extraction
+  - File path detection
+  - Hash identification (MD5, SHA1, SHA256)
+
+- **Unpacker Detector**
+  - Packer identification (UPX, Themida, VMProtect, ASPack, etc.)
+  - Entry point analysis
+  - Section characteristic analysis
+
+- **Report Generator**
+  - HTML report export
+  - Markdown report export
+  - JSON structured data export
+  - PDF report generation
+
+### VirusTotal Integration
+- File hash scanning
+- Detection rate analysis
+- Malware report retrieval
+
+### Enhanced Hashing
+- MD5, SHA-1, SHA-256, SHA-512
+- Import hash (ImpHash)
+- Rich header hash
 
 ---
 
-## 🐻 Original Description
+## Original Description
 
 PE-bear is a multiplatform reversing tool for PE files. Its objective is to deliver fast and flexible "first view" for malware analysts, stable and capable to handle malformed PE files.
 
@@ -80,7 +98,7 @@ Signatures for PE-bear:
 
 ## How to build
 
-### Requires:
+### Requirements
 
 +   [git](https://git-scm.com/downloads)
 +   [cmake](http://www.cmake.org)
@@ -101,7 +119,6 @@ git clone --recursive https://github.com/0nsec/pe-bear.git
 
 Use [CMake](http://www.cmake.org) to generate a Visual Studio project. Open in Visual Studio and build.
 
-
 ### Building on Linux and MacOS
 
 To build it on Linux or MacOS you can use the given scripts:
@@ -110,20 +127,25 @@ To build it on Linux or MacOS you can use the given scripts:
 +   [build_qt5.sh](./build_qt5.sh) - builds with Qt5
 +   [build_qt4.sh](./build_qt4.sh) - builds with Qt4
 
+To install system-wide (adds to application launcher):
+```console
+./build.sh install
+```
+
 To generate the `.app` bundle on MacOS you can use:
 +   [macos_wrap.sh](./macos_wrap.sh)
 
-More info on [📖 Wiki](https://github.com/hasherezade/pe-bear/wiki/Building-from-sources).
+More info on [Wiki](https://github.com/hasherezade/pe-bear/wiki/Building-from-sources).
 
-> An archive of **old releases** is available here: https://github.com/hasherezade/
-pe-bear-releases
+> An archive of **old releases** is available here: https://github.com/hasherezade/pe-bear-releases
 
+---
 
 ## Using the AI Features
 
 ### Setup
 1. Open PE-bear
-2. Go to **AI Assistant → AI Settings**
+2. Go to **AI Assistant > AI Settings**
 3. Enter your API keys:
    - **OpenAI**: Get from https://platform.openai.com/api-keys
    - **Gemini**: Get from https://makersuite.google.com/app/apikey
@@ -132,13 +154,25 @@ pe-bear-releases
 5. Enable your desired AI provider
 6. Save settings
 
-### Features
+### AI Assistant Features
 - **Open AI Assistant** (Ctrl+Alt+A): Access the AI analysis panel
 - **Analyze Imports**: AI analyzes imported functions for capabilities and threats
 - **Analyze Exports**: AI examines exported functions
 - **Analyze Strings**: AI identifies suspicious strings and patterns
 - **Detect Malware**: Comprehensive AI-powered malware analysis
 - **VirusTotal Scan**: Query file hash against VirusTotal database
+- **Agent Mode**: Fully automated comprehensive analysis
+
+### Analysis Menu Features
+- **Entropy Analysis**: View entropy visualization for all sections
+- **IOC Extraction**: Extract indicators of compromise from the file
+- **Shellcode Detection**: Scan for shellcode patterns
+- **Generate Report**: Export analysis to HTML, Markdown, JSON, or PDF
 
 ---
+
+## License
+
+This project is licensed under GPL v2. See [LICENSE](LICENSE) for details.
+
 
