@@ -28,6 +28,7 @@ struct IOC {
     offset_t offset;
     bool isSuspicious;
     QString context;
+    double confidence;  // 0.0 - 1.0
 };
 
 class IOCExtractor : public QObject
@@ -70,6 +71,7 @@ public:
     static bool isPrivateIP(const QString &ip);
     static bool isLocalhost(const QString &value);
     static QString getIOCTypeName(IOC::Type type);
+    static QString typeToString(IOC::Type type);
     
     // Threat intel (basic)
     bool checkMaliciousDomain(const QString &domain);

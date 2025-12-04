@@ -325,7 +325,7 @@ QString ReportGenerator::generateJSON(const AnalysisReport &report)
         QJsonObject s;
         s["pattern"] = match.patternName;
         s["offset"] = QString::number(match.offset, 16);
-        s["size"] = match.size;
+        s["size"] = static_cast<qint64>(match.size);
         s["confidence"] = match.confidence;
         s["description"] = match.description;
         shellcode.append(s);

@@ -8,10 +8,11 @@ typedef uint64_t offset_t;
 // YARA match result structure
 struct YaraMatch {
     QString ruleName;
-    QString ruleNamespace;
+    QString namespaceName;
     QStringList tags;
     QMap<QString, QString> metadata;
     QList<QPair<offset_t, size_t>> matches; // offset, length pairs
+    QString description;
 };
 
 class YaraScanner : public QObject

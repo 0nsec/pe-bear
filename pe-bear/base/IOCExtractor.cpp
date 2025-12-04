@@ -534,6 +534,11 @@ QString IOCExtractor::getIOCTypeName(IOC::Type type)
     }
 }
 
+QString IOCExtractor::typeToString(IOC::Type type)
+{
+    return getIOCTypeName(type);
+}
+
 bool IOCExtractor::checkMaliciousDomain(const QString &domain)
 {
     return knownMaliciousDomains.contains(domain.toLower());
