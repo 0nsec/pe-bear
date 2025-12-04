@@ -232,7 +232,7 @@ void EntropyWindow::updateDisplay(const QList<EntropyBlock> &blocks)
 
     // Generate and display heatmap
     int heatmapWidth = qMin(800, blocks.size());
-    lastHeatmap = analyzer->generateHeatmapImage(blocks, heatmapWidth, 50);
+    lastHeatmap = analyzer->generateHeatmap(blocks, heatmapWidth, 50);
     if (!lastHeatmap.isNull()) {
         heatmapLabel->setPixmap(QPixmap::fromImage(lastHeatmap.scaled(
             heatmapScrollArea->width() - 20, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));

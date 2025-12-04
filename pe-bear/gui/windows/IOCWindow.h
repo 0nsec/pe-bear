@@ -10,6 +10,7 @@
 #include <QVBoxLayout>
 #include <QGroupBox>
 #include <QCheckBox>
+#include <QLabel>
 
 #include "../../base/IOCExtractor.h"
 #include "../../base/PeHandler.h"
