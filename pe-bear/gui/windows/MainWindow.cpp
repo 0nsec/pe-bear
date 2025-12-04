@@ -377,13 +377,30 @@ void MainWindow::createActions()
 	connect(this->zoomDefault, SIGNAL(triggered()), this, SLOT(setDefaultZoom()));
 	
 	// AI Assistant actions
-	openAIAssistantAction = new QAction(QIcon(":/icons/List.ico"), tr("Open AI Assistant"), this);
+	openAIAssistantAction = new QAction(QIcon(":/icons/List.ico"), tr("AI Assistant"), this);
 	openAIAssistantAction->setShortcut(QKeySequence(Qt::CTRL | Qt::ALT | Qt::Key_A));
 	openAIAssistantAction->setShortcutContext(Qt::ApplicationShortcut);
 	connect(this->openAIAssistantAction, SIGNAL(triggered()), this, SLOT(openAIAssistant()));
 	
 	openAISettingsAction = new QAction(tr("AI Settings..."), this);
 	connect(this->openAISettingsAction, SIGNAL(triggered()), this, SLOT(openAISettings()));
+
+	// Analysis tools actions
+	openEntropyWindowAction = new QAction(tr("Entropy Analysis"), this);
+	openEntropyWindowAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_E));
+	connect(this->openEntropyWindowAction, SIGNAL(triggered()), this, SLOT(openEntropyWindow()));
+
+	openIOCWindowAction = new QAction(tr("IOC Extractor"), this);
+	openIOCWindowAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_I));
+	connect(this->openIOCWindowAction, SIGNAL(triggered()), this, SLOT(openIOCWindow()));
+
+	openShellcodeWindowAction = new QAction(tr("Shellcode Detector"), this);
+	openShellcodeWindowAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
+	connect(this->openShellcodeWindowAction, SIGNAL(triggered()), this, SLOT(openShellcodeWindow()));
+
+	openReportWindowAction = new QAction(tr("Report Generator"), this);
+	openReportWindowAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_R));
+	connect(this->openReportWindowAction, SIGNAL(triggered()), this, SLOT(openReportWindow()));
 }
 
 void MainWindow::createMenus()
@@ -431,6 +448,14 @@ void MainWindow::createMenus()
 	this->aiMenu->addAction(this->openAIAssistantAction);
 	this->aiMenu->addSeparator();
 	this->aiMenu->addAction(this->openAISettingsAction);
+
+	// Analysis menu
+	QMenu *analysisMenu = menuBar()->addMenu(tr("A&nalysis"));
+	analysisMenu->addAction(this->openEntropyWindowAction);
+	analysisMenu->addAction(this->openIOCWindowAction);
+	analysisMenu->addAction(this->openShellcodeWindowAction);
+	analysisMenu->addSeparator();
+	analysisMenu->addAction(this->openReportWindowAction);
 
 	menuBar()->addAction(this->openDiffWindowAction);
 	menuBar()->addAction(this->infoAction);

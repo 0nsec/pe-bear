@@ -324,7 +324,7 @@ for (size_t i = 0; i < impNum; i++) {
 ImportEntryWrapper *impEntry = dynamic_cast<ImportEntryWrapper*>(importDir->getEntryAt(i));
 if (!impEntry) continue;
 
-QString dllName = QString::fromStdString(impEntry->getLibraryName());
+QString dllName = QString(impEntry->getLibraryName());
 
 size_t funcNum = impEntry->getEntriesCount();
 for (size_t j = 0; j < funcNum && j < 100; j++) {

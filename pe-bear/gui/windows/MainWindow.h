@@ -18,6 +18,10 @@
 #include "UserConfigWindow.h"
 #include "AIAssistantWindow.h"
 #include "AISettingsWindow.h"
+#include "EntropyWindow.h"
+#include "IOCWindow.h"
+#include "ShellcodeWindow.h"
+#include "ReportWindow.h"
 
 #include "../../SectionsDiagram.h"
 #include "../../PEFileTreeModel.h"
@@ -93,6 +97,46 @@ public slots:
 	{
 		this->aiSettingsWindow.show();
 		this->aiSettingsWindow.raise(); 
+	}
+
+	void openEntropyWindow()
+	{
+		if (!entropyWindow.isVisible()) {
+			addDockWidget(Qt::RightDockWidgetArea, &entropyWindow);
+		}
+		entropyWindow.setPeHandler(m_PeHndl);
+		entropyWindow.show();
+		entropyWindow.raise();
+	}
+
+	void openIOCWindow()
+	{
+		if (!iocWindow.isVisible()) {
+			addDockWidget(Qt::RightDockWidgetArea, &iocWindow);
+		}
+		iocWindow.setPeHandler(m_PeHndl);
+		iocWindow.show();
+		iocWindow.raise();
+	}
+
+	void openShellcodeWindow()
+	{
+		if (!shellcodeWindow.isVisible()) {
+			addDockWidget(Qt::RightDockWidgetArea, &shellcodeWindow);
+		}
+		shellcodeWindow.setPeHandler(m_PeHndl);
+		shellcodeWindow.show();
+		shellcodeWindow.raise();
+	}
+
+	void openReportWindow()
+	{
+		if (!reportWindow.isVisible()) {
+			addDockWidget(Qt::RightDockWidgetArea, &reportWindow);
+		}
+		reportWindow.setPeHandler(m_PeHndl);
+		reportWindow.show();
+		reportWindow.raise();
 	}
 
 	// zooming:
@@ -203,6 +247,10 @@ private:
 	SectionAddWindow secAddWindow;
 	AIAssistantWindow aiAssistantWindow;
 	AISettingsWindow aiSettingsWindow;
+	EntropyWindow entropyWindow;
+	IOCWindow iocWindow;
+	ShellcodeWindow shellcodeWindow;
+	ReportWindow reportWindow;
 
 	QStatusBar statusBar;
 	QGridLayout cntntLayout;
@@ -244,7 +292,11 @@ private:
 		*exportAllPEsDisasmAction,
 		*exportAllPEsStrings,
 		*openAIAssistantAction,
-		*openAISettingsAction;
+		*openAISettingsAction,
+		*openEntropyWindowAction,
+		*openIOCWindowAction,
+		*openShellcodeWindowAction,
+		*openReportWindowAction;
 
 	ExeDependentAction *dumpAllSecAction,
 		*addSecAction,
