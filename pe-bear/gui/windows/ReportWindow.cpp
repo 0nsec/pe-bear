@@ -153,7 +153,7 @@ AnalysisReport ReportWindow::gatherReportData()
     PEFile *pe = peHandler->getPe();
     
     // File info
-    report.fileName = peHandler->getFileName();
+    report.fileName = QFileInfo(peHandler->getFullName()).fileName();
     report.filePath = peHandler->getFullName();
     report.fileSize = pe->getRawSize();
     report.analysisTime = QDateTime::currentDateTime();
